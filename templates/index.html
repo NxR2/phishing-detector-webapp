@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector - Advanced</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Phishing URL Detector</h1>
+        <p>Advanced detection with ML, WHOIS, SSL, and VirusTotal</p>
+        
+        <div class="input-section">
+            <input type="text" id="urlInput" placeholder="https://example.com">
+            <button onclick="checkURL()">Check URL</button>
+        </div>
+        
+        <div id="result" class="result-section" style="display:none;">
+            <h2 id="resultLabel"></h2>
+            
+            <div class="risk-bar">
+                <div id="riskFill" class="risk-fill"></div>
+            </div>
+            <p>Risk Score: <span id="riskScore"></span>/100 (ML: <span id="mlRiskScore"></span>/100)</p>
+            
+            <div class="risk-factors" id="riskFactorsSection" style="display:none;">
+                <h3>⚠️ Risk Factors:</h3>
+                <ul id="riskFactorList"></ul>
+            </div>
+            
+            <div class="features">
+                <h3>🔍 Top Suspicious Features:</h3>
+                <ul id="featureList"></ul>
+            </div>
+            
+            <div class="additional-info">
+                <h3>📊 Additional Security Checks:</h3>
+                
+                <div class="info-card">
+                    <h4>Domain Information</h4>
+                    <p>Created: <span id="domainCreation"></span></p>
+                    <p>Age: <span id="domainAge"></span> days</p>
+                    <p id="domainWarning" class="warning"></p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>SSL Certificate</h4>
+                    <p>Valid: <span id="sslValid"></span></p>
+                    <p>Issuer: <span id="sslIssuer"></span></p>
+                    <p>Expires: <span id="sslExpires"></span></p>
+                    <p id="sslWarning" class="warning"></p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>VirusTotal Reputation</h4>
+                    <p>Status: <span id="vtStatus"></span></p>
+                    <p id="vtStats" class="vt-stats"></p>
+                    <p id="vtWarning" class="warning"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Analyzing URL with multiple security checks...</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

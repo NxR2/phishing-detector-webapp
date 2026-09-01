@@ -1,0 +1,15 @@
+{
+  "feature_names": [
+    "url_length",
+    "num_dots",
+    "num_hyphens",
+    "has_https",
+    "has_at",
+    "has_ip",
+    "contains_login",
+    "num_tokens",
+    "num_digits",
+    "has_query"
+  ],
+  "model_type": "SimpleGaussianNB"
+}
