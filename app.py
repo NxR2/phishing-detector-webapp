@@ -96,6 +96,7 @@ def train_default_model():
         os.path.join(BASE_DIR, 'phishing_clean.csv'),
         os.path.join(BASE_DIR, 'phishing_urls.csv'),
         os.path.join(BASE_DIR, 'urlhaus_cleaned1.csv'),
+        os.path.join(BASE_DIR, 'legitimate_urls.csv'),
     ]
 
     dataset_path = next((p for p in dataset_candidates if os.path.exists(p)), None)
